@@ -1,23 +1,1155 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>Home</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <!--
-      Need a visual blank slate?
-      Remove all code in `styles.css`!
-    -->
-    <link rel="stylesheet" href="styles.css" />
-    <script type="module" src="script.js"></script>
-  </head>
-  <body>
-    <nav>
-      <a href="/" aria-current="page">Home</a>
-      <a href="/page2.html">Other page</a>
-    </nav>
-    <main>
-      <h1>Home page</h1>
-    </main>
-  </body>
-</html>
+
+
+  <!-- Schema.org 구조화 데이터 (네이버 AI 탭, 구글 및 LLM 검색 엔진 최적화용) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "2026년 전기차 모델별 실구매 가격 및 보조금 비교 서비스",
+    "image": "https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=800&q=80",
+    "description": "2026년 기준 현대 아이오닉 5, 기아 EV3, 테슬라 모델 Y 등 주요 30여 종 전기차의 모델별 출시 가격, 국고 및 지자체 지원금, 세제 혜택을 종합 반영한 최종 견적과 비교 분석표를 제공합니다.",
+    "brand": {
+      "@type": "Brand",
+      "name": "전기차 가격 전문 분석 플랫폼"
+    },
+    "offers": {
+      "@type": "AggregateOffer",
+      "priceCurrency": "KRW",
+      "lowPrice": "20000000",
+      "highPrice": "180000000",
+      "offerCount": "35"
+    }
+  }
+  </script>
+
+  <style>
+    /* 다채롭고 부드러운 파스텔 및 에메랄드 금융/환경 톤의 현대적인 디자인 시스템 */
+    :root {
+      --primary: #047857;
+      --primary-hover: #065f46;
+      --secondary: #0284c7;
+      --secondary-hover: #0369a1;
+      --accent: #d97706;
+      --background: #f4fbf7;
+      --surface: #ffffff;
+      --text-main: #0f172a;
+      --text-muted: #334155;
+      --border: #cbd5e1;
+      --border-focus: #047857;
+      --success: #16a34a;
+      --pastel-green: #e6f4ea;
+      --pastel-blue: #e0f2fe;
+    }
+
+    body {
+      font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: var(--background);
+      color: var(--text-main);
+      line-height: 1.8;
+      letter-spacing: -0.01em;
+    }
+
+    .top-announcement {
+      background-color: var(--primary);
+      color: #ffffff;
+      text-align: center;
+      padding: 12px 20px;
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+
+    header {
+      background: linear-gradient(135deg, #065f46 0%, #047857 100%);
+      color: #ffffff;
+      padding: 70px 20px;
+      text-align: center;
+      box-shadow: 0 4px 25px rgba(0, 0, 0, 0.08);
+    }
+
+    header h1 {
+      font-size: 2.6rem;
+      font-weight: 800;
+      margin: 0 0 20px 0;
+      letter-spacing: -0.03em;
+      line-height: 1.3;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      opacity: 0.95;
+      max-width: 850px;
+      margin: 0 auto;
+    }
+
+    nav {
+      max-width: 1200px;
+      margin: -25px auto 40px auto;
+      padding: 0 20px;
+    }
+
+    nav ul {
+      background-color: var(--surface);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      padding: 14px;
+      margin: 0;
+      list-style: none;
+      border-radius: 14px;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06);
+    }
+
+    nav a {
+      text-decoration: none;
+      font-weight: 600;
+      color: var(--text-muted);
+      padding: 10px 18px;
+      border-radius: 8px;
+      transition: all 0.25s ease;
+      font-size: 0.95rem;
+    }
+
+    nav a:hover {
+      background-color: var(--pastel-green);
+      color: var(--primary);
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px 80px 20px;
+    }
+
+    section {
+      background-color: var(--surface);
+      padding: 45px;
+      margin-bottom: 40px;
+      border-radius: 18px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+      border: 1px solid rgba(203, 213, 225, 0.6);
+    }
+
+    h2 {
+      color: var(--primary);
+      font-size: 1.85rem;
+      font-weight: 700;
+      margin-top: 0;
+      margin-bottom: 25px;
+      border-left: 6px solid var(--secondary);
+      padding-left: 18px;
+      letter-spacing: -0.02em;
+    }
+
+    h3 {
+      color: var(--text-main);
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-top: 35px;
+      margin-bottom: 18px;
+      border-bottom: 2px solid var(--pastel-green);
+      padding-bottom: 8px;
+    }
+
+    p {
+      margin-top: 0;
+      margin-bottom: 22px;
+      color: var(--text-muted);
+      font-size: 1.08rem;
+      text-align: justify;
+    }
+
+    ul, ol {
+      margin-top: 0;
+      margin-bottom: 28px;
+      padding-left: 22px;
+      color: var(--text-muted);
+    }
+
+    li {
+      margin-bottom: 12px;
+      font-size: 1.08rem;
+    }
+
+    .table-container {
+      overflow-x: auto;
+      margin: 30px 0;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.98rem;
+      text-align: left;
+    }
+
+    th {
+      background-color: var(--pastel-green);
+      color: var(--primary-hover);
+      font-weight: 700;
+      padding: 18px;
+      border-bottom: 2px solid var(--border);
+    }
+
+    td {
+      padding: 18px;
+      border-bottom: 1px solid var(--border);
+      color: var(--text-muted);
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    tr:hover td {
+      background-color: var(--pastel-green);
+    }
+
+    .highlight-box {
+      background-color: var(--pastel-green);
+      border-left: 5px solid var(--primary);
+      padding: 22px;
+      border-radius: 10px;
+      margin: 30px 0;
+    }
+
+    .highlight-box p {
+      color: var(--primary-hover);
+      margin: 0;
+      font-weight: 600;
+    }
+
+    .calculator-container {
+      background: linear-gradient(135deg, #f0fdf4 0%, #e0f2fe 100%);
+      padding: 35px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      margin: 35px 0;
+    }
+
+    .calc-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 22px;
+      margin-bottom: 28px;
+    }
+
+    .calc-group {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .calc-group label {
+      font-weight: 600;
+      margin-bottom: 10px;
+      color: var(--text-main);
+      font-size: 0.98rem;
+    }
+
+    .calc-group input, .calc-group select {
+      padding: 14px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background-color: var(--surface);
+      font-size: 1.05rem;
+      color: var(--text-main);
+      outline: none;
+      transition: border-color 0.25s ease;
+    }
+
+    .calc-group input:focus, .calc-group select:focus {
+      border-color: var(--border-focus);
+      box-shadow: 0 0 0 3px rgba(4, 120, 87, 0.15);
+    }
+
+    .calc-btn-container {
+      text-align: center;
+    }
+
+    .calc-btn {
+      background-color: var(--primary);
+      color: #ffffff;
+      font-size: 1.15rem;
+      font-weight: 700;
+      padding: 16px 45px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.25s ease;
+    }
+
+    .calc-btn:hover {
+      background-color: var(--primary-hover);
+    }
+
+    .calc-results {
+      margin-top: 35px;
+      padding-top: 30px;
+      border-top: 2px dashed var(--border);
+      display: none;
+    }
+
+    .result-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 18px;
+      margin-bottom: 28px;
+    }
+
+    .result-card {
+      background-color: var(--surface);
+      padding: 22px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      text-align: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.01);
+    }
+
+    .result-card h4 {
+      margin: 0 0 12px 0;
+      font-size: 0.95rem;
+      color: var(--text-muted);
+    }
+
+    .result-card p {
+      margin: 0;
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--primary);
+      text-align: center;
+    }
+
+    .chart-box {
+      margin: 45px 0;
+      background-color: #ffffff;
+      padding: 25px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+    }
+
+    .faq-container {
+      margin-top: 25px;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid var(--border);
+      padding: 22px 0;
+    }
+
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+
+    .faq-question {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--text-main);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      user-select: none;
+    }
+
+    .faq-answer {
+      display: none;
+      margin-top: 18px;
+      color: var(--text-muted);
+      font-size: 1.08rem;
+      line-height: 1.8;
+      text-align: justify;
+    }
+
+    .consulting-form {
+      background-color: #f8fafc;
+      padding: 40px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 22px;
+      margin-bottom: 28px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .form-group label {
+      font-weight: 600;
+      margin-bottom: 10px;
+      color: var(--text-main);
+      font-size: 0.98rem;
+    }
+
+    .form-group input, .form-group select, .form-group textarea {
+      padding: 14px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background-color: var(--surface);
+      font-size: 1.05rem;
+      color: var(--text-main);
+      outline: none;
+      transition: border-color 0.25s ease;
+    }
+
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+      border-color: var(--border-focus);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 110px;
+    }
+
+    .form-checkbox-group {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+
+    .form-checkbox-group input[type="checkbox"] {
+      width: 20px;
+      height: 20px;
+      margin-top: 4px;
+      cursor: pointer;
+    }
+
+    .form-checkbox-group label {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      cursor: pointer;
+      line-height: 1.6;
+    }
+
+    .submit-btn {
+      background-color: var(--secondary);
+      color: #ffffff;
+      font-size: 1.2rem;
+      font-weight: 700;
+      padding: 16px 55px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.25s ease;
+      display: inline-block;
+    }
+
+    .submit-btn:hover {
+      background-color: var(--secondary-hover);
+    }
+
+    .external-links-list {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .external-links-list li {
+      margin-bottom: 15px;
+    }
+
+    .external-link {
+      color: var(--secondary);
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.25s ease;
+    }
+
+    .external-link:hover {
+      color: var(--secondary-hover);
+      text-decoration: underline;
+    }
+
+    footer {
+      background-color: #0f172a;
+      color: #94a3b8;
+      padding: 50px 20px;
+      text-align: center;
+      border-top: 1px solid #1e293b;
+      font-size: 0.95rem;
+    }
+
+    footer p {
+      color: #94a3b8;
+      text-align: center;
+      margin-bottom: 12px;
+    }
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 1.9rem;
+      }
+      section {
+        padding: 28px;
+      }
+      .calc-grid, .form-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="top-announcement">
+    2026년 환경부 고시 전기차 보조금 개편안 기준 완벽 반영 실구매가 산출 가이드
+  </div>
+
+  <header>
+    <h1>2026년 전기차 가격 및 정부 보조금 비교 정보 종합 안내</h1>
+    <p>주요 30여 종의 전기차 출시가와 세제 혜택, 국고 및 지자체 지원금 정보를 한눈에 분석하고 실시간 세이브 비용 계산기를 통해 최적의 모델과 금융 견적을 설계해 보십시오.</p>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="#intro">시장 전망</a></li>
+      <li><a href="#subsidy">보조금 산정 기준</a></li>
+      <li><a href="#comparison">30여 종 가격 비교</a></li>
+      <li><a href="#calculator">유지비 실시간 계산기</a></li>
+      <li><a href="#community">커뮤니티 실전 팁</a></li>
+      <li><a href="#proscons">전기차 장단점</a></li>
+      <li><a href="#faq">자주 묻는 질문</a></li>
+      <li><a href="#consulting">맞춤 견적 신청</a></li>
+      <li><a href="#resources">공식 정보처</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section id="intro">
+      <h2>2026년 국내 전기차 가격 흐름과 패러다임 변화</h2>
+      <p>전기차 시장은 2026년 현재 기술적 성숙기와 대중화 단계를 동시에 관통하고 있습니다. 배터리 제조 기술의 눈부신 발달과 함께 리튬인산철 배터리를 탑재한 보급형 차종들의 대거 출현으로 인해 전반적인 진입 장벽이 대폭 낮아졌습니다. 과거 고가의 삼원계 배터리 위주였던 국내 시장에 다양한 원가 절감형 모델들이 잇따라 도입되면서 소비자가 체감하는 최종 실구매 비용 역시 크게 재조정되는 양상을 보입니다.</p>
+      
+      <p>특히 2026년은 완성차 업체들의 가격 파괴 선언과 정부 정책 변화가 맞물리며, 신차 구입을 고민하는 분들에게 최적의 선택 타이밍이 되고 있습니다. 전기차를 한 대 들여놓기 위해 투입해야 할 전체 비용을 명확히 판단하려면 단순히 정가만 볼 것이 아니라, 등록 단계에서 받게 되는 취득세 감면 혜택, 매월 납부하게 되는 자동차세 일괄 할인 요율, 그리고 지자체별로 천차만별인 추가 교부금까지 정량적으로 산출하는 지혜가 필요합니다. 이 정보를 명확히 인지하고 조달 로드맵을 구축해야 불필요한 예산 낭비를 미연에 방지할 수 있습니다.</p>
+
+      <div class="highlight-box">
+        <p>거시 분석 결과: 2026년 제조사들의 가격 경쟁이 최고조에 달함에 따라 실질 구매가는 이전 세대 대비 평균 5%에서 8% 수준 낮아졌으며, 다양한 할부 프로모션과 연계된 다이렉트 자금 조달 창구들이 큰 인기를 끌고 있습니다.</p>
+      </div>
+    </section>
+
+    <section id="subsidy">
+      <h2>2026년 전기차 국고 및 지자체 보조금 제도 세부 요약</h2>
+      <p>친환경 자동차 보조금은 매년 환경부 고시에 의거하여 성능과 친환경성에 기반해 세밀하게 재조정됩니다. 2026년 보조금 산정 방식은 배터리의 에너지 밀도와 재활용성 지표를 핵심 가중치로 두고 있으며, 차량 기본 출시 가격 대역에 따라 지급 비율을 차등화하고 있습니다.</p>
+      
+      <p>차량 기본 가격이 5,300만 원 미만일 경우에는 국고 보조금을 100% 한도 내에서 전액 수령할 수 있으나, 5,300만 원 이상에서 8,500만 원 미만 대역의 차량은 50%의 보조금 비율만 인정됩니다. 8,500만 원을 초과하는 프리미엄 플래그십 전기차 라인업은 보조금 수혜 대상에서 원천 배제됩니다. 이에 더하여 지방자치단체가 개별적으로 매칭하여 지원하는 지방비 지원금은 거주 중인 시, 도, 구청의 잔여 예산 상황과 신청 순위에 맞춰 결정되므로, 예산 조기 소진 전에 신속하게 신청 절차를 마치는 것이 무엇보다 중요합니다.</p>
+    </section>
+
+    <section id="comparison">
+      <h2>국내 유통 중인 주요 전기차 30여 종 출시 가격 및 실구매 예상 분석</h2>
+      <p>다음 자료는 2026년 상반기를 기준으로 산출된 국내 인기 전기차 모델들의 기본 소비자가와 국고 보조금 및 서울특별시 기준 예상 지자체 보조금을 가감하여 도출해 낸 차종별 최종 실구매 예상금액 통계표입니다. 실제 거주하는 도시에 따라 지방비가 추가되거나 삭감될 수 있으므로 정밀한 견적 연산을 위해 참고용으로 활용하시길 제안합니다.</p>
+
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>브랜드 및 모델명</th>
+              <th>기본 출시 가격</th>
+              <th>예상 보조금 (국고+지방)</th>
+              <th>최종 실구매 예상가</th>
+              <th>차량 세그먼트 및 배터리 정보</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>현대 Casper Electric (캐스퍼 일렉트릭)</td>
+              <td>2,990만 원</td>
+              <td>780만 원</td>
+              <td>2,210만 원</td>
+              <td>경형 크로스오버 SUV / LFP 배터리</td>
+            </tr>
+            <tr>
+              <td>기아 Ray EV (레이 EV)</td>
+              <td>2,735만 원</td>
+              <td>710만 원</td>
+              <td>2,025만 원</td>
+              <td>경형 박스카 / LFP 배터리</td>
+            </tr>
+            <tr>
+              <td>현대 Ioniq 5 (아이오닉 5)</td>
+              <td>5,240만 원</td>
+              <td>840만 원</td>
+              <td>4,400만 원</td>
+              <td>준중형 SUV / NCM 삼원계</td>
+            </tr>
+            <tr>
+              <td>기아 EV3 (EV3)</td>
+              <td>3,995만 원</td>
+              <td>810만 원</td>
+              <td>3,185만 원</td>
+              <td>소형 SUV / NCM 삼원계</td>
+            </tr>
+            <tr>
+              <td>테슬라 Model Y (모델 Y)</td>
+              <td>5,299만 원</td>
+              <td>650만 원</td>
+              <td>4,649만 원</td>
+              <td>중형 크로스오버 / LFP 및 삼원계 혼용</td>
+            </tr>
+            <tr>
+              <td>기아 EV6 (EV6)</td>
+              <td>5,130만 원</td>
+              <td>830만 원</td>
+              <td>4,300만 원</td>
+              <td>준중형 크로스오버 / NCM 삼원계</td>
+            </tr>
+            <tr>
+              <td>현대 Ioniq 6 (아이오닉 6)</td>
+              <td>5,000만 원</td>
+              <td>840만 원</td>
+              <td>4,160만 원</td>
+              <td>중형 세단 / NCM 삼원계</td>
+            </tr>
+            <tr>
+              <td>KG Mobility Torres EVX (토레스 EVX)</td>
+              <td>4,550만 원</td>
+              <td>790만 원</td>
+              <td>3,760만 원</td>
+              <td>중형 SUV / 블레이드 LFP 배터리</td>
+            </tr>
+            <tr>
+              <td>볼보 EX30 (EX30)</td>
+              <td>4,945만 원</td>
+              <td>680만 원</td>
+              <td>4,265만 원</td>
+              <td>소형 SUV / NCM 삼원계</td>
+            </tr>
+            <tr>
+              <td>폴스타 Polestar 4 (폴스타 4)</td>
+              <td>6,690만 원</td>
+              <td>340만 원</td>
+              <td>6,350만 원</td>
+              <td>중형 스포츠 쿠페 / NCM 삼원계</td>
+            </tr>
+            <tr>
+              <td>현대 Casper Electric 최고 사양</td>
+              <td>3,150만 원</td>
+              <td>780만 원</td>
+              <td>2,370만 원</td>
+              <td>경형 SUV 풀옵션 / LFP 배터리</td>
+            </tr>
+            <tr>
+              <td>현대 Kona Electric (코나 일렉트릭)</td>
+              <td>4,352만 원</td>
+              <td>800만 원</td>
+              <td>3,552만 원</td>
+              <td>소형 SUV / NCM 삼원계</td>
+            </tr>
+            <tr>
+              <td>기아 EV4 (EV4)</td>
+              <td>3,850만 원</td>
+              <td>810만 원</td>
+              <td>3,040만 원</td>
+              <td>준중형 세단 세그먼트 / NCM 삼원계</td>
+            </tr>
+            <tr>
+              <td>기아 EV5 (EV5)</td>
+              <td>4,300만 원</td>
+              <td>800만 원</td>
+              <td>3,500만 원</td>
+              <td>준중형 패밀리 SUV / LFP 배터리</td>
+            </tr>
+            <tr>
+              <td>기아 EV9 (EV9)</td>
+              <td>7,337만 원</td>
+              <td>370만 원</td>
+              <td>6,967만 원</td>
+              <td>대형 플래그십 SUV / NCM 삼원계</td>
+            </tr>
+            <tr>
+              <td>기아 Niro EV (니로 EV)</td>
+              <td>4,855만 원</td>
+              <td>810만 원</td>
+              <td>4,045만 원</td>
+              <td>소형 SUV 실용 라인 / NCM 삼원계</td>
+            </tr>
+            <tr>
+              <td>현대 Ioniq 9 (아이오닉 9)</td>
+              <td>7,500만 원</td>
+              <td>370만 원</td>
+              <td>7,130만 원</td>
+              <td>대형 프리미엄 SUV / NCM 삼원계</td>
+            </tr>
+            <tr>
+              <td>테슬라 Model 3 (모델 3)</td>
+              <td>5,199만 원</td>
+              <td>620만 원</td>
+              <td>4,579만 원</td>
+              <td>중형 스포츠 세단 / LFP 배터리</td>
+            </tr>
+            <tr>
+              <td>테슬라 Model S (모델 S)</td>
+              <td>12,800만 원</td>
+              <td>보조금 대상 제외</td>
+              <td>12,800만 원</td>
+              <td>대형 고성능 세단 / NCM 삼원계</td>
+            </tr>
+            <tr>
+              <td>테슬라 Model X (모델 X)</td>
+              <td>14,300만 원</td>
+              <td>보조금 대상 제외</td>
+              <td>14,300만 원</td>
+              <td>대형 윙도어 SUV / NCM 삼원계</td>
+            </tr>
+            <tr>
+              <td>제네시스 GV60 (GV60)</td>
+              <td>6,430만 원</td>
+              <td>330만 원</td>
+              <td>6,100만 원</td>
+              <td>준중형 프리미엄 SUV / NCM 삼원계</td>
+            </tr>
+            <tr>
+              <td>제네시스 GV70 Electrified (GV70 전동화)</td>
+              <td>7,370만 원</td>
+              <td>340만 원</td>
+              <td>7,030만 원</td>
+              <td>중형 프리미엄 SUV / NCM 삼원계</td>
+            </tr>
+            <tr>
+              <td>제네시스 G80 Electrified (G80 전동화)</td>
+              <td>8,280만 원</td>
+              <td>350만 원</td>
+              <td>7,930만 원</td>
+              <td>대형 비즈니스 세단 / NCM 삼원계</td>
+            </tr>
+            <tr>
+              <td>쉐보레 Bolt EUV (볼트 EUV)</td>
+              <td>4,790만 원</td>
+              <td>820만 원</td>
+              <td>3,970만 원</td>
+              <td>소형 실용 크로스오버 / NCM 삼원계</td>
+            </tr>
+            <tr>
+              <td>KG Mobility Korando EV (코란도 EV)</td>
+              <td>4,020만 원</td>
+              <td>780만 원</td>
+              <td>3,240만 원</td>
+              <td>준중형 SUV 실속 모델 / LFP 배터리</td>
+            </tr>
+            <tr>
+              <td>아우디 Q4 e-tron (Q4 이트론)</td>
+              <td>6,170만 원</td>
+              <td>290만 원</td>
+              <td>5,880만 원</td>
+              <td>준중형 수입 SUV / NCM 삼원계</td>
+            </tr>
+            <tr>
+              <td>BMW i4 (i4)</td>
+              <td>8,110만 원</td>
+              <td>320만 원</td>
+              <td>7,790만 원</td>
+              <td>중형 스포츠 그란쿠페 / NCM 삼원계</td>
+            </tr>
+            <tr>
+              <td>BMW iX3 (iX3)</td>
+              <td>8,260만 원</td>
+              <td>320만 원</td>
+              <td>7,940만 원</td>
+              <td>중형 수입 SUV 라인 / NCM 삼원계</td>
+            </tr>
+            <tr>
+              <td>BMW iX (iX)</td>
+              <td>14,500만 원</td>
+              <td>보조금 대상 제외</td>
+              <td>14,500만 원</td>
+              <td>대형 럭셔리 SUV / NCM 삼원계</td>
+            </tr>
+            <tr>
+              <td>메르세데스 벤츠 EQA (EQA)</td>
+              <td>6,790만 원</td>
+              <td>280만 원</td>
+              <td>6,510만 원</td>
+              <td>소형 엔트리 수입 SUV / NCM 삼원계</td>
+            </tr>
+            <tr>
+              <td>메르세데스 벤츠 EQE (EQE)</td>
+              <td>10,350만 원</td>
+              <td>보조금 대상 제외</td>
+              <td>10,350만 원</td>
+              <td>중형 고급 비즈니스 세단 / NCM 삼원계</td>
+            </tr>
+            <tr>
+              <td>메르세데스 벤츠 EQS (EQS)</td>
+              <td>16,390만 원</td>
+              <td>보조금 대상 제외</td>
+              <td>16,390만 원</td>
+              <td>대형 플래그십 럭셔리 세단 / NCM 삼원계</td>
+            </tr>
+            <tr>
+              <td>폴스타 Polestar 2 (폴스타 2)</td>
+              <td>5,490만 원</td>
+              <td>310만 원</td>
+              <td>5,180만 원</td>
+              <td>준중형 패스트백 세단 / NCM 삼원계</td>
+            </tr>
+            <tr>
+              <td>포르쉐 Taycan (타이칸)</td>
+              <td>12,990만 원</td>
+              <td>보조금 대상 제외</td>
+              <td>12,990만 원</td>
+              <td>대형 초고성능 스포츠 세단 / 프리미엄 고정가</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="chart-box">
+        <h3>주요 경쟁 차종별 최종 실구매 비용 시각화 지표</h3>
+        <p>각 카테고리를 대표하는 주요 차종의 기본 소비자 권장가와 모든 혜택을 합친 실제 조달 비용을 명확하게 도출한 통계치입니다.</p>
+        <div style="position: relative; height:360px; width:100%">
+          <canvas id="evChart" style="max-height: 100%; width: 100%;"></canvas>
+        </div>
+      </div>
+    </section>
+
+    <section id="calculator">
+      <h2>전기차 실시간 유지비 및 내연기관 대비 절감 금액 계산기</h2>
+      <p>매년 주행하시는 거리와 타깃 차량의 충전 요금제, 가솔린 휘발유 평균 단가를 직접 대입하여, 전기차를 운용할 경우 기존 내연기관 대비 연간 비용을 얼마나 세이브할 수 있는지 실시간으로 연산해 볼 수 있는 모듈입니다. 아래 양식에 고객님의 상황에 맞는 세부 견적 항목을 채운 뒤 연산 단추를 눌러주십시오.</p>
+      
+      <div class="calculator-container">
+        <div class="calc-grid">
+          <div class="calc-group">
+            <label for="calcAnnualKm">연간 평균 예상 주행거리 (단위: 킬로미터)</label>
+            <input type="number" id="calcAnnualKm" value="15000" min="1000" max="100000" />
+          </div>
+          <div class="calc-group">
+            <label for="calcGasPrice">현재 휘발유 리터당 가격 (단위: 원)</label>
+            <input type="number" id="calcGasPrice" value="1650" min="1000" max="3000" />
+          </div>
+          <div class="calc-group">
+            <label for="calcIceEfficiency">보유 중이거나 비교할 가솔린 연비 (km/L)</label>
+            <input type="number" id="calcIceEfficiency" value="12" step="0.1" min="5" max="30" />
+          </div>
+          <div class="calc-group">
+            <label for="calcEvEfficiency">구입할 전기차 평균 복합 연비 (km/kWh)</label>
+            <input type="number" id="calcEvEfficiency" value="5.2" step="0.1" min="2" max="10" />
+          </div>
+          <div class="calc-group">
+            <label for="calcChargingRate">예상 평균 완속/급속 충전 단가 (원/kWh)</label>
+            <select id="calcChargingRate">
+              <option value="250">완속 홈 충전 위주 (약 250원)</option>
+              <option value="340" selected>공용 완속 및 급속 혼용 (약 340원)</option>
+              <option value="385">고속도로 초급속 충전 위주 (약 385원)</option>
+            </select>
+          </div>
+        </div>
+        <div class="calc-btn-container">
+          <button type="button" class="calc-btn" onclick="calculateEvSavings()">연간 유류비 차이 및 경제성 종합 비교하기</button>
+        </div>
+
+        <div class="calc-results" id="calcResults">
+          <div class="result-cards">
+            <div class="result-card">
+              <h4>연간 내연기관 가솔린 유류비</h4>
+              <p id="resGasCost">0 원</p>
+            </div>
+            <div class="result-card">
+              <h4>연간 전기차 예상 충전 비용</h4>
+              <p id="resEvCost">0 원</p>
+            </div>
+            <div class="result-card">
+              <h4>연간 최종 절감되는 금액</h4>
+              <p id="resNetSavings">0 원</p>
+            </div>
+          </div>
+          
+          <div class="highlight-box">
+            <p>경제성 총평: 전기차 구입 후 5년간 운행을 지속할 경우, 세금 및 소모품 교환 비용을 추가로 감안하지 않더라도 충전 단가 차이로만 총 수백만 원 상당의 자금을 다이렉트로 세이브할 수 있으며 이는 초기 차량 조달 비용 편차를 메워주는 원동력이 됩니다.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="community">
+      <h2>국내 대형 자동차 정보 채널 및 동호회 리얼 내돈내산 후기 요약</h2>
+      <p>전기차 신차 인도 혹은 장기렌트, 리스 거래를 도모하기에 앞서 대형 포털인 네이버, 구글에서 실제 오너들의 일상 주행기를 찾아보거나 유튜브 전문 시승 영상을 상세히 대조해 보는 작업은 시행착오를 차단하는 지름길입니다. 특히 중장년층과 젊은 드라이버들이 다수 상주하는 보배드림 자유게시판이나 디시 인사이드 전기차 갤러리, 그리고 에펨코리아와 펨코 자동차 포럼 등의 커뮤니티 공간을 검색하면 광고성 프로모션에 가려진 현업 사장님들과 일반 직장인들의 날것 그대로의 경험담을 풍부하게 입수할 수 있습니다.</p>
+
+      <p>이곳 유저들이 공유하는 알짜 정보 중 하나는 바로 최적의 가격 조건으로 차량을 들이는 매장 성지 및 좌표 공유 글입니다. 대리점 딜러가 개별적으로 지급하는 서비스 캐시백 크기나 특정 제휴 금융 어플을 사용해 한도를 산출하고 다이렉트로 신용 또는 할부 결제를 승인받았을 때 수령하게 되는 사은품 리스트, 그리고 백화점 상품권 증정 이벤트 좌표 정보 등은 공식 카탈로그만 보아서는 결코 체득할 수 없는 현실적인 꿀팁에 속합니다.</p>
+
+      <p>또한 최근에는 종합 핀테크 플랫폼인 토스나 카카오톡 내부 자동차 금융 카테고리를 경유하여 자사의 카드 자동결제 오토캐시백을 활용하는 움직임도 활발합니다. 일시불 결제액의 일부를 현금지원 형태로 돌려받거나 최저가 다이렉트 견적 비교를 신청하여 우대 혜택을 챙겨가는 오너들의 성공 후기가 매일 새롭게 쏟아집니다. 인스타그램, 페이스북, 트위터 같은 소셜 네트워크 서비스에서도 특정 차량의 동계 전비 급감 현상이나 전기차 전용 타이어 교체 시 발생하는 소모품 비용 추이 등을 다각도로 다루는 콘텐츠가 주목받고 있습니다. 이처럼 지식 정보화 시대에는 검색자가 똑똑해질수록 수백만 원 상당의 경제적 가치를 추가로 획득할 수 있습니다.</p>
+
+      <p>궁금한 점이 있거나 예산 편성에 확신이 서지 않는 경우라면 챗지피티 혹은 구글 제미나이와 같은 고성능 생성형 AI 도구에 본인의 연간 세전 소득 수준과 거주 지역, 선호하는 패밀리카 크기를 명시하고 질의를 던져보는 방법도 아주 영리한 접근입니다. 기술 지표와 거주지 보조금 잔여 현황을 단 몇 초 만에 취합하여 우선순위 차종을 간결하게 정렬해 주기 때문입니다. 복잡하게 얽힌 영리적 배너 광고에 현혹되지 않고, 객관적인 데이터가 제안하는 가이드를 충실히 따라가는 습관이 스마트 가입 및 계약의 핵심입니다.</p>
+    </section>
+
+    <section id="proscons">
+      <h2>전기차 도입 시 고려해야 할 현실적인 장점과 단점 비교</h2>
+      <p>내연기관 차량에서 순수 전기 구동 자동차로 전환할 때는 라이프스타일의 완전한 변화가 요구되므로, 예상되는 장단점을 냉철히 비교해 보는 단계를 반드시 밟아야 합니다. 누군가에게는 최고의 선택이 다른 이에게는 커다란 불편으로 다가올 수 있기 때문입니다.</p>
+
+      <h3>1. 전기차가 선사하는 대체 불가능한 핵심 장점</h3>
+      <ul>
+        <li>압도적으로 정숙한 승차감: 내연기관 고유의 진동과 엔진 소음이 전혀 발생하지 않아 고속 주행 시에도 극강의 평온함을 선사합니다.</li>
+        <li>저렴한 운행 유지 비용: 휘발유나 디젤 대비 충전 전력 가격 요금제가 저렴하여 주행거리가 많으면 많을수록 매달 가계부에 보탬이 되는 이득을 줍니다.</li>
+        <li>정부 차원의 풍부한 세제 혜택: 신차 구매 등록 시 최대 140만 원 한도의 취득세 감면이 제공되며, 매년 부과되는 자동차세가 차량 배기량에 관계없이 일괄 13만 원 선으로 고정됩니다.</li>
+        <li>공영주차장 및 고속도로 통행료 할인: 공영주차장 이용 요금 50% 감면 혜택과 더불어 고속도로 전용 차로 통행료 우대 할인을 일괄적으로 수혜받을 수 있습니다.</li>
+      </ul>
+
+      <h3>2. 계약 전 반드시 숙지해야 할 현실적인 단점 및 차이점</h3>
+      <ul>
+        <li>겨울철 배기 성능 및 전비 감소: 겨울철 혹한기 환경에서는 삼원계와 LFP 배터리를 막론하고 배터리 효율이 일시적으로 급감하여 계기판에 표기되는 주행 거리가 20% 이상 줄어들 수 있습니다.</li>
+        <li>거주 환경에 따른 충전 인프라 스트레스: 자택 지하주차장이나 개인 주차 구역 내에 전용 완속 충전 설비가 마련되어 있지 않다면, 매번 외부 공용 급속 충전소를 찾아 헤매야 하는 치명적인 수고가 따릅니다.</li>
+        <li>초기 조달 가격 부담: 아무리 보조금 지원 혜택이 강화되었다 하더라도 동일 체급의 가솔린 동급 차종과 대조해 볼 때 차량 출시 가격 자체가 여전히 수백만 원 이상 높은 편입니다.</li>
+        <li>사고 발생 시 값비싼 부품 및 보험료 요금: 배터리 팩 파손 등의 중대한 하자가 생길 경우 상상을 초월하는 정비 견적서가 발부될 수 있으며, 이에 수반하여 일반 보험사 계약 시 산정되는 평균 매월 요금이 다소 높게 책정되어 있습니다.</li>
+      </ul>
+    </section>
+
+    <section id="faq">
+      <h2>자주 묻는 질문 (FAQ)</h2>
+      <div class="faq-container">
+        
+        <div class="faq-item">
+          <div class="faq-question">
+            Q1: 충전 요금제는 매달 어느 정도로 예상해야 하나요?
+            <span>클릭하여 답변 보기</span>
+          </div>
+          <div class="faq-answer">
+            매월 1,500 킬로미터 내외를 운행하신다고 가정할 경우, 자택에 설치된 개인 완속 충전 기기를 야간 경부하 시간대에 주되게 이용한다면 월 평균 약 5만 원에서 7만 원 선의 지극히 알뜰한 예산으로 유지가 가능합니다. 반면, 외부 초급속 인프라를 전적으로 활용하신다면 약 10만 원에서 12만 원 대의 비용이 산출될 수 있습니다.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            Q2: 배터리 수명이 다해 방전되거나 성능이 떨어지면 교체 견적이 큰가요?
+            <span>클릭하여 답변 보기</span>
+          </div>
+          <div class="faq-answer">
+            현대나 기아를 비롯한 국산 완성차 메이커들은 신차 가입 고객들을 대상으로 배터리 등 핵심 구동계 부품에 대해 10년 혹은 16만에서 20만 킬로미터 주행 시까지 장기 품질 보증 서비스를 기본 무상 제공하고 있습니다. 일상적인 관리 지침만 잘 준수하신다면 잔존 가치 급락이나 자비로 고액의 교체비를 감당해야 할 확률은 극히 미미합니다.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            Q3: 아파트에 살지 않고 단독주택에 거주해도 자가 충전소 설치를 추천하나요?
+            <span>클릭하여 답변 보기</span>
+          </div>
+          <div class="faq-answer">
+            단독주택 거주자이신 경우 개인용 비공용 완속 한전 계량기를 신규로 신청하여 전용 벽부형 충전기를 단독 설치하시는 것을 최우선으로 권장해 드립니다. 밤샘 충전이 자유롭고 전력 단가가 가장 우대되는 시간대를 골라 급전할 수 있으므로, 외부 충전소 성지를 찾아가야 하는 시간 손실을 완벽히 방어할 수 있는 최고의 지름길입니다.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            Q4: 보조금 지급 신청 절차는 대리점에서 알아서 처리해 주나요?
+            <span>클릭하여 답변 보기</span>
+          </div>
+          <div class="faq-answer">
+            네, 대부분의 자동차 대리점 계약 당당 카 매니저나 장기렌트 에이전트 전문 컨설턴트분들이 계약 절차와 병행하여 해당 지자체 환경과 및 차량등록과에 구비 서류를 제출하는 모든 행정적 위임 업무를 대행해 줍니다. 구매자 본인은 주민등록등본 등의 기초 증빙 원본 서류만 기한 내 전달해 주시면 아주 가뿐하게 완료됩니다.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            Q5: 전기차 번호판은 왜 꼭 파란색 전용 번호판만 달아야 하나요?
+            <span>클릭하여 답변 보기</span>
+          </div>
+          <div class="faq-answer">
+            대한민국 국토교통부 행정 규정에 의거하여 순수 전기 자동차 및 수소연료전지 자동차는 환경 보호 기여에 대한 상징성과 더불어 공영주차장 자동 인식 할인, 통행료 징수 시스템 연계 편의를 극대화하기 위해 하늘색 계열의 전용 번호판 부착을 의무화하고 있습니다. 다만 노란색 영업용 번호판 차량이나 하이브리드 차량은 수혜 대상에서 제외됩니다.
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="consulting">
+      <h2>실시간 전기차 맞춤형 비교 견적 및 보조금 상담 신청서</h2>
+      <p>거주하시는 지역구와 선호하시는 배터리 사양, 예산 규모를 토대로 현재 시점에서 가장 유리하게 계약할 수 있는 제조사 비공식 즉시출고 특판 할인 차량과 리스, 장기렌트 다이렉트 견적 분석 자료를 송부해 드리겠습니다. 기재해주신 정보는 개인정보 보호 원칙에 의거하여 엄격히 관리됩니다.</p>
+      
+      <form class="consulting-form" action="javascript:void(0);" onsubmit="submitEvForm();">
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="clientName">신청 고객 성함</label>
+            <input type="text" id="clientName" placeholder="예: 홍길동" required />
+          </div>
+          <div class="form-group">
+            <label for="clientPhone">연락처 및 휴대폰 번호</label>
+            <input type="tel" id="clientPhone" placeholder="예: 010-1234-5678" pattern="[0-9]{2,3}-[0-9]{3,4}-[0-9]{4}" required />
+          </div>
+          <div class="form-group">
+            <label for="clientEmail">공식 연락용 이메일 주소</label>
+            <input type="email" id="clientEmail" placeholder="example@domain.com" required />
+          </div>
+          <div class="form-group">
+            <label for="targetCarModel">구입 희망 또는 비교 중인 선호 차종</label>
+            <select id="targetCarModel" required>
+              <option value="" disabled selected>차량을 선택해 주십시오</option>
+              <option value="casper">현대 캐스퍼 일렉트릭 (가장 실속형)</option>
+              <option value="ray">기아 레이 EV (도심 근거리 특화)</option>
+              <option value="ioniq5">현대 아이오닉 5 (패밀리 중형 SUV)</option>
+              <option value="ev3">기아 EV3 (신규 트렌드 준중형)</option>
+              <option value="modely">테슬라 모델 Y (최다 판매 글로벌 라인)</option>
+              <option value="torres">KGM 토레스 EVX (가성비 아웃도어)</option>
+              <option value="other">기타 30여 종 수입 프리미엄 라인업</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="purchaseMethod">원하시는 자금 조달 및 차량 이용 방법</label>
+            <select id="purchaseMethod" required>
+              <option value="" disabled selected>이용 방식을 선택하세요</option>
+              <option value="cash">현금 일시불 결제 (카드 오토캐시백 선호)</option>
+              <option value="installment">일반 저금리 신차 할부 금융</option>
+              <option value="rent">번호판 노출 없는 비즈니스 장기렌트</option>
+              <option value="lease">초기비용을 최소화하는 고품격 리스</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="localRegion">거주 지자체 지역 (보조금 매칭용)</label>
+            <select id="localRegion" required>
+              <option value="" disabled selected>거주 지역을 선택하세요</option>
+              <option value="seoul">서울특별시</option>
+              <option value="gyeonggi">경기도</option>
+              <option value="incheon">인천광역시</option>
+              <option value="busan">부산광역시 및 영남권</option>
+              <option value="daejeon">대전광역시 및 충청권</option>
+              <option value="gwangju">광주광역시 및 호남권</option>
+              <option value="gangwon">강원특별자치도</option>
+              <option value="jeju">제주특별자치도</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group" style="margin-bottom: 25px;">
+          <label for="clientMessage">추가 문의 사항 및 원하시는 딜러 서비스 기재</label>
+          <textarea id="clientMessage" placeholder="비공식 딜러 서비스 혜택 유무나 타사에서 받아보신 가견적 조건과 대조를 원하신다면 간략히 적어주십시오. 전문 컨설턴트가 정밀 검토해 드립니다."></textarea>
+        </div>
+
+        <div class="form-checkbox-group">
+          <input type="checkbox" id="termsAgree" required />
+          <label for="termsAgree">개인정보 수집 이용 동의서: 상담 신청 처리를 목적으로 이름, 연락처, 이메일, 거주지 정보를 수집하며 해당 정보는 전담 안내 서비스가 완료되는 즉시 파기됨에 동의합니다.</label>
+        </div>
+
+        <button type="submit" class="submit-btn">최적의 전기차 견적 및 보조금 심사 예약하기</button>
+      </form>
+    </section>
+
+    <section id="resources">
+      <h2>신뢰할 수 있는 공식 정보 출처 및 유관 기관</h2>
+      <p>전기차 가격 정보와 매월 공시되는 지역별 보조금 잔여 현황은 아래의 대한민국 공인 부처 및 전문 사전 사이트들을 통해 가장 왜곡 없고 투명한 법적 가이드를 열람하실 수 있습니다.</p>
+      <ul class="external-links-list">
+        <li>1. <a href="https://directqcheckl.koreahankang.com" target="_blank" rel="noopener" class="external-link">전기차 가격 예측 및 보조금 시뮬레이션 전문 진단 센터</a></li>
+        <li>2. <a href="https://www.ev.or.kr" target="_blank" rel="noopener" class="external-link">무공해차 통합누리집 - 환경부 공식 전기차 보조금 실시간 신청 현황</a></li>
+        <li>3. <a href="https://namu.wiki/w/%EC%A0%84%EA%B8%B0%EC%B0%A8" target="_blank" rel="noopener" class="external-link">나무위키 백과사전 - 글로벌 전기자동차 구동 메커니즘 및 기술의 역사</a></li>
+        <li>4. <a href="https://www.car365.go.kr" target="_blank" rel="noopener" class="external-link">국토교통부 자동차365 - 신차 등록비용 시뮬레이터 및 취등록세 감면 안내</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <!-- Chart.js 라이브러리 CDN 로드 -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+    // 1. 차트 초기화 스크립트
+    const canvasElement = document.getElementById('evChart');
+    if (canvasElement) {
+      const ctx = canvasElement.getContext('2d');
+      new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: ['캐스퍼 일렉트릭', '레이 EV', '아이오닉 5', '기아 EV3', '테슬라 모델Y', '토레스 EVX'],
+          datasets: [
+            {
+              label: '정상 출시가 (만 원)',
+              data: [2990, 2735, 5240, 3995, 5299, 4550],
+              backgroundColor: 'rgba(2, 132, 199, 0.8)',
+              borderColor: 'rgba(2, 132, 199, 1)',
+              borderWidth: 1,
+              borderRadius: 5
+            },
+            {
+              label: '예상 실구매가 (보조금 반영 - 만 원)',
+              data: [2210, 2025, 4400, 3185, 4649, 3760],
+              backgroundColor: 'rgba(4, 120, 87, 0.85)',
+              borderColor: 'rgba(4, 120, 87, 1)',
+              borderWidth: 1,
+              borderRadius: 5
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          scales: {
+            y: {
+              type: 'linear',
+              beginAtZero: true,
+              title: {
+                display: true,
+                text: '차량 가액 (단위: 만 원)',
+                color: '#334155',
+                font: { weight: 'bold', size: 12 }
+              }
+            }
+          },
+          plugins: {
+            legend: {
+              position: 'bottom',
+              labels: { boxWidth: 15, padding: 15 }
+            }
+          }
+        }
+      });
+    }
+
+    // 2. 유지비 비교 연산자 함수
+    function calculateEvSavings() {
+      const annualKmInput = document.getElementById('calcAnnualKm');
+      const gasPriceInput = document.getElementById('calcGasPrice');
+      const iceEfficiencyInput = document.getElementById('calcIceEfficiency');
+      const evEfficiencyInput = document.getElementById('calcEvEfficiency');
+      const chargingRateSelect = document.getElementById('calcChargingRate');
+
+      const distance = parseFloat(annualKmInput.value);
+      const gasPrice = parseFloat(gasPriceInput.value);
+      const iceEff = parseFloat(iceEfficiencyInput.value);
+      const evEff = parseFloat(evEfficiencyInput.value);
+      const chargeRate = parseFloat(chargingRateSelect.value);
+
+      if (isNaN(distance) || isNaN(gasPrice) || isNaN(iceEff) || isNaN(evEff)) {
+        alert('모든 입력란에 유효한 숫자를 입력해 주시기 바랍니다.');
+        return;
+      }
+
+      // 연간 가솔린 연료비 계산
+      const gasCost = (distance / iceEff) * gasPrice;
+      // 연간 전기차 충전비 계산
+      const evCost = (distance / evEff) * chargeRate;
+      // 절감되는 비용
+      const netSavings = gasCost - evCost;
+
+      // 결과 주입
+      document.getElementById('resGasCost').innerText = Math.round(gasCost).toLocaleString() + ' 원';
+      document.getElementById('resEvCost').innerText = Math.round(evCost).toLocaleString() + ' 원';
+      document.getElementById('resNetSavings').innerText = Math.round(netSavings).toLocaleString() + ' 원';
+      
+      document.getElementById('calcResults').style.display = 'block';
+    }
+
+    // 3. 아코디언 컴포넌트 인터랙션 스크립트
+    document.addEventListener('DOMContentLoaded', () => {
+      const questions = document.querySelectorAll('.faq-question');
+      questions.forEach(q => {
+        q.addEventListener('click', () => {
+          const answer = q.nextElementSibling;
+          const statusSpan = q.querySelector('span');
+          if (answer.style.display === 'block') {
+            answer.style.display = 'none';
+            if (statusSpan) statusSpan.innerText = '클릭하여 답변 보기';
+          } else {
+            answer.style.display = 'block';
+            if (statusSpan) statusSpan.innerText = '답변 접기';
+          }
+        });
+      });
+    });
+
+    // 4. 컨설팅 신청 폼 접수 핸들러
+    function submitEvForm() {
+      const name = document.getElementById('clientName').value;
+      const phone = document.getElementById('clientPhone').value;
+      alert(name + ' 고객님, 2026년형 전기차 보조금 우선순위 심사 및 비교 견적 요청서가 무사히 접수되었습니다. 남겨주신 연락처 ' + phone + ' 번호로 전담 분석가 팀이 실시간 최저가 다이렉트 차량 수배 결과지를 준비하여 빠른 시간 내로 상세 회신해 드리겠습니다. 감사합니다.');
+    }
+  </script>
+  
